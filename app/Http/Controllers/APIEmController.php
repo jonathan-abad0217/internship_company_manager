@@ -42,7 +42,7 @@ class APIEmController extends Controller
       
     }
 
-  
+    
     public function delete($id)
     {
         $data=Employees::find($id);
