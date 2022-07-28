@@ -1,0 +1,30 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+.p-4{
+    padding: 1rem;
+}
+ul.main-nav {
+    display: inline-block; /* fixes that spacing issue */
+    margin: 0; /* cancels out unwanted margin */
+}
+.border-1{
+    border-width: .07rem;
+}
+.form div{
+    margin-bottom: 15px;
+}
+.form div>input{
+    display: block;
+}
+.form div>button {
+    padding: 5px;
+}
+.form .form-error{
+    font-size: .75rem;
+    color: red;
+    font-weight: bold;
+
+}.form .form-check>{
+    display: block;
+}
