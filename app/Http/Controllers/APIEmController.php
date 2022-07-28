@@ -12,7 +12,7 @@ class APIEmController extends Controller
     public function index()
     {      
         
-        return Employees::all();
+        return Employees::orderBy('employee_first_name', 'asc')->paginate(10);  
 
       
     }

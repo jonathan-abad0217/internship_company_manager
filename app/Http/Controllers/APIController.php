@@ -12,9 +12,9 @@ class APIController extends Controller
     
     public function index()
     {
-    return Companies::all();   
-    } 
-    
+    return Companies::orderBy('name', 'asc')->paginate(10);   
+    }
+
     public function store(CompanyFormRequest $request)
     {
         
