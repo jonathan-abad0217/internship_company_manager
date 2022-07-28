@@ -30,7 +30,7 @@ Route::resource('api',APIController::class);
 Route::resource('apie',APIEmController::class);
 
 Route::get('/companies', [APIController::class, 'index']);
-Route::post('/companies', [APIController::c ass, 'store']);
+Route::post('/companies', [APIController::class, 'store']);
 
 Route::post('/companies/update/{id}', [APIController::class, 'update']);
 Route::delete('/companies/delete/{id}', [APIController::class, 'delete']);
