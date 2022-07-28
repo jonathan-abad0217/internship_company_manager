@@ -12,22 +12,8 @@ class APIController extends Controller
     
     public function index()
     {
-        
-    $company = Companies::orderBy('name', 'asc')->paginate(10);
-
-   
-
-    return view('API.company.company_index')->with('companies', $company,);
-            
-        
-    }
-   
-    public function create()
-    {
-        
-        return view('API.company.company_create');
-    }
-
+    return Companies::all();   
+    } 
     
     public function store(CompanyFormRequest $request)
     {
@@ -42,33 +28,13 @@ class APIController extends Controller
             $path = $request->file('image')->storeAs($destination_path, $image_name);
             
             $data['image'] =$image_name;
+        }else{
+            $data['image'] = 'null';    
         
         }
         $companies = Companies::create($data);
-       return redirect()->route('api.index');
+       return Companies::all();
     }
-    
-  
-    public function show($id)
-    {
-        //
-        $company = Companies::find($id);
-
-       $employee = Employees::find($id);
-
-        return view('api.show')->with('companies', $company);
-        
-    }
-
-    
-    public function edit($company)
-    {
-        //
-        return view('api.edit', [
-            'company' => Companies::findorFail($company)
-        ]);
-    }
-
    
     public function update(CompanyFormRequest $request, $id)
     {
@@ -89,14 +55,14 @@ class APIController extends Controller
             $company->update($data);
 
             
-            return redirect()->route('api.index');
+            return Companies::all();
         }
    
     public function delete($id)
     {
             $data=Companies::find($id);
             $data->delete();
-            return redirect()->route('api.index');
+            return Companies::all();
         }
     
 
