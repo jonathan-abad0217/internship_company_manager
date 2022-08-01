@@ -10,31 +10,80 @@ use Illuminate\Support\Facades\File;
 class APIController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
-    return Companies::orderBy('name', 'asc')->paginate(10);   
+        $company_query = new Companies();
+        if($request ->sortBy && in_array($request->sortBy,['id', 'created_at'])){
+            $sortBy=$request->sortBy;
+
+        }else{
+            $sortBy='name';
+        }
+        if($request->sortOrder && in_array($request->sortOrder,['asc','desc'])){
+            $sortOrder=$request->sortOrder;
+        
+        }else{
+            $sortOrder='desc';
+        }
+        
+        if($request->paginate){
+            $company=$company_query->orderBY($sortBy,$sortOrder)->paginate($request->paginate);
+
+        }else{
+            $company=$company_query->ordeBY($sortBy,$sortOrder)->get();
+
+        }
+           
+            return response()->json([
+                'message'=>'Blog successfully fetched',
+                'data'=> $company
+            ],200);
+            
+
     }
+   
 
     public function store(CompanyFormRequest $request)
     {
-        
-        $data = $request->validated();
+        $company = new Company();
 
-        if($request->hasFile('image')){
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->image = 'null';
+        $company->website = $request->website;
 
-            $destination_path ='public/images/companies';
-            $image = $request->file('image');
-            $image_name = $image->getClientOriginalName();
-            $path = $request->file('image')->storeAs($destination_path, $image_name);
-            
-            $data['image'] =$image_name;
+        $data = $company->save();
+        if(!$data){
+            return response()->json([
+                'status' => 400,
+                'error' => 'something went wrong'
+            ]);
         }else{
-            $data['image'] = 'null';    
-        
+            return response()->json([
+                'message' => 'Data successfully saved',
+                'status' => 200,
+            ]);
         }
-        $companies = Companies::create($data);
-       return Companies::all();
     }
+        
+    //     $data = $request->validated();
+
+    //     if($request->hasFile('image')){
+
+    //         $destination_path ='public/images/companies';
+    //         $image = $request->file('image');
+    //         $image_name = $image->getClientOriginalName();
+    //         $path = $request->file('image')->storeAs($destination_path, $image_name);
+
+    //         $data['image'] =$image_name;
+    //     }else{
+    //         $data['image'] = 'null';    
+        
+    //     }
+    //     $companies = Companies::create($data);
+
+    //    return response($companies, 200);
+    // }
    
     public function update(CompanyFormRequest $request, $id)
     {
@@ -55,16 +104,15 @@ class APIController extends Controller
             $company->update($data);
 
             
-            return Companies::all();
+            return response($company, 200);
         }
    
     public function delete($id)
     {
             $data=Companies::find($id);
             $data->delete();
-            return Companies::all();
-        }
-    
 
+            return response($data, 200);
+        }    
+        }
         
-}

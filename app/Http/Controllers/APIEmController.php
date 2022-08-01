@@ -9,14 +9,40 @@ use App\Http\Requests\EmployeeForm;
 
 class APIEmController extends Controller
 {
-    public function index()
-    {      
+
+    
+
+    public function index(Request $request)
+    {
+        $employee_query = new Employees();
+        if($request ->sortBy && in_array($request->sortBy,['id', 'created_at'])){
+            $sortBy=$request->sortBy;
+
+        }else{
+            $sortBy='employee_first_name';
+        }
+        if($request->sortOrder && in_array($request->sortOrder,['asc','desc'])){
+            $sortOrder=$request->sortOrder;
         
-        return Employees::orderBy('employee_first_name', 'asc')->paginate(10);  
+        }else{
+            $sortOrder='desc';
+        }
+        
+        if($request->paginate){
+            $employee=$employee_query->orderBY($sortBy,$sortOrder)->paginate($request->paginate);
 
-      
+        }else{
+            $employee=$employee_query->ordeBY($sortBy,$sortOrder)->get();
+
+        }
+           
+            return response()->json([
+                'message'=>'Blog successfully fetched',
+                'data'=> $employee
+            ],200);
+            
+
     }
-
     public function store(EmployeeForm $request)
     {
         

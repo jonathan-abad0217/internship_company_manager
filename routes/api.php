@@ -16,27 +16,24 @@ use App\Http\Controllers\APIEmController;
 |
 */
 
-// Route::get('/companies', [CompanyController::class, 'index']);
 
-// Route::post('/companies/update/{id}', [CompanyController::class, 'update']);
-// Route::delete('/companies/delete/{id}', [CompanyController::class, 'delete']);
-
-
-// Route::get('/employees', [EmployeeController::class, 'index']);
-
-// Route::post('/employees/update/{id}', [EmployeeController::class, 'update']);
-// Route::delete('/employees/delete/{id}', [EmployeeController::class, 'delete']);
 Route::resource('api',APIController::class);
 Route::resource('apie',APIEmController::class);
 
+
+
 Route::get('/companies', [APIController::class, 'index']);
+
+
 Route::post('/companies', [APIController::class, 'store']);
 
 Route::post('/companies/update/{id}', [APIController::class, 'update']);
 Route::delete('/companies/delete/{id}', [APIController::class, 'delete']);
 
 
+
 Route::get('/employees', [APIEmController::class, 'index']);
+
 Route::post('/employees', [APIEmController::class, 'store']);
 
 Route::put('/employees/update/{id}', [APIEmController::class, 'update']);
