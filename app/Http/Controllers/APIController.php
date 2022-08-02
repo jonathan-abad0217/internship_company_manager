@@ -35,9 +35,10 @@ class APIController extends Controller
         }
            
             return response()->json([
-                'message'=>'Blog successfully fetched',
+                'message'=>'Data successfully fetched',
+                'status' => 200,
                 'data'=> $company
-            ],200);
+            ]);
             
 
     }
@@ -45,45 +46,29 @@ class APIController extends Controller
 
     public function store(CompanyFormRequest $request)
     {
-        $company = new Company();
+       
+        
+        $data = $request->validated();
+        
 
-        $company->name = $request->name;
-        $company->email = $request->email;
-        $company->image = 'null';
-        $company->website = $request->website;
+        if($request->hasFile('image')){
 
-        $data = $company->save();
-        if(!$data){
-            return response()->json([
-                'status' => 400,
-                'error' => 'something went wrong'
-            ]);
-        }else{
-            return response()->json([
-                'message' => 'Data successfully saved',
-                'status' => 200,
-            ]);
+            $destination_path ='public/images/companies';
+            $image = $request->file('image');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('image')->storeAs($destination_path, $image_name);
+
+            $data['image'] =$image_name;
+          
+        
         }
+        $companies = Companies::create($data);
+
+       return response()->json([
+        'message' => 'Data successfully saved',
+        'status' => 200,
+       ]);
     }
-        
-    //     $data = $request->validated();
-
-    //     if($request->hasFile('image')){
-
-    //         $destination_path ='public/images/companies';
-    //         $image = $request->file('image');
-    //         $image_name = $image->getClientOriginalName();
-    //         $path = $request->file('image')->storeAs($destination_path, $image_name);
-
-    //         $data['image'] =$image_name;
-    //     }else{
-    //         $data['image'] = 'null';    
-        
-    //     }
-    //     $companies = Companies::create($data);
-
-    //    return response($companies, 200);
-    // }
    
     public function update(CompanyFormRequest $request, $id)
     {
@@ -104,7 +89,10 @@ class APIController extends Controller
             $company->update($data);
 
             
-            return response($company, 200);
+            return response()->json([
+                'message' => 'Data successfully updated',
+                'status' => 200,
+               ]);
         }
    
     public function delete($id)
@@ -112,7 +100,10 @@ class APIController extends Controller
             $data=Companies::find($id);
             $data->delete();
 
-            return response($data, 200);
+            return response()->json([
+                'message' => 'Data successfully deleted',
+                'status' => 200,
+            ]);
         }    
         }
         

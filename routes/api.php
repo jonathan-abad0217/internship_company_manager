@@ -25,7 +25,7 @@ Route::resource('apie',APIEmController::class);
 Route::get('/companies', [APIController::class, 'index']);
 
 
-Route::post('/companies', [APIController::class, 'store']);
+Route::post('/companies/create', [APIController::class, 'store']);
 
 Route::post('/companies/update/{id}', [APIController::class, 'update']);
 Route::delete('/companies/delete/{id}', [APIController::class, 'delete']);
@@ -34,7 +34,7 @@ Route::delete('/companies/delete/{id}', [APIController::class, 'delete']);
 
 Route::get('/employees', [APIEmController::class, 'index']);
 
-Route::post('/employees', [APIEmController::class, 'store']);
+Route::post('/employees/create', [APIEmController::class, 'store']);
 
 Route::put('/employees/update/{id}', [APIEmController::class, 'update']);
 Route::delete('/employees/delete/{id}', [APIEmController::class, 'delete']);

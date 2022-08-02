@@ -35,8 +35,8 @@
     </div>
   
    <div class="form-group">
-    <label for="exampleFormControlFile1" class="text-sm">Choose Image File </label>
-    <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+    <label for="image" class="text-sm">Choose Image File </label>
+    <input type="file" class="form-control-file" name="image" id="image">
    </div>
     <div>
         <label class="text-sm" for="website">Website</label>

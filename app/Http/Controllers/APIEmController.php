@@ -36,10 +36,11 @@ class APIEmController extends Controller
 
         }
            
-            return response()->json([
-                'message'=>'Blog successfully fetched',
-                'data'=> $employee
-            ],200);
+        return response()->json([
+            'message'=>'Data successfully fetched',
+            'status' => 200,
+            'data'=> $employee
+        ]);
             
 
     }
@@ -50,7 +51,10 @@ class APIEmController extends Controller
         $companies = Companies::findorFail($request->company_id);
         
         $companies->employees()->create($data);
-            return Employees::all();
+        return response()->json([
+            'message'=>'Data successfully saved',
+            'status' => 200,
+        ]);
 
     }
 
@@ -62,7 +66,10 @@ class APIEmController extends Controller
         $data = $request->validated();
         $employee = Employees::findOrFail($employee_id);
         $employee->update($data);
-            return Employees::all();
+        return response()->json([
+            'message'=>'Data successfully updated',
+            'status' => 200 ,
+        ]);
        
         
       
@@ -73,7 +80,9 @@ class APIEmController extends Controller
     {
         $data=Employees::find($id);
         $data->delete();
-        return Employees::all();
-    }
+        return response()->json([
+            'message'=>'Data successfully deleted',
+            'status' => 200,
+        ]);
 }
-
+}

@@ -33,7 +33,7 @@
                     </div>
                 @enderror
             </div>
-            <br>
+            <div>
             <label class="text-sm" for="company">Company</label>
         <br>
         <select  id="company_id" name="company_id" class="form control input-sm" for="company_id">
@@ -42,6 +42,12 @@
             <option value="{{$company->id}}">{{$company->name}}</option>
             @endforeach
         </select>
+        @error('company_id')
+                <div class="form-error">
+                    {{ "Please choose your company." }}
+                </div>
+                    @enderror
+            </div>
         <div>
             <label class="text-sm" for="email">Email Address</label>
             <input class="form-control" cols="30" rows="5" type="text" id="email" name="email"  value="{{ old('email') }}">
