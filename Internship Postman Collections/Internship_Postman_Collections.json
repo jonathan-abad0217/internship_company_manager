@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "e8693b5e-315e-4c3f-b8a7-7b7767c60be7",
+		"name": "Internship-Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get company sortBy=id/name & paginate=10",
+			"_postman_id": "73234811-9aa1-445b-836c-52f0582ad4c5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/companies?page=1&sortBy=name&sortOrder=asc&paginate=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"companies"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "sortBy",
+							"value": "name"
+						},
+						{
+							"key": "sortOrder",
+							"value": "asc"
+						},
+						{
+							"key": "paginate",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add company",
+			"_postman_id": "5545bd30-5aad-41a2-be33-3bd1f2b9303b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "asd",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "asd",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/D:/OneDrive/Pictures/0562d171481981.5bcd77262adca.jpg"
+						},
+						{
+							"key": "website",
+							"value": "asd",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": "http://localhost:8000/api/companies/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Update company",
+			"_postman_id": "ff97512f-21eb-4769-9ecc-d47665351306",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "WorldWideWeb",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "WorldWideWeb@email.com",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/D:/OneDrive/Pictures/0ca59a02143d837b5842e4d3477ba0c973a6ee14.jpg"
+						},
+						{
+							"key": "website",
+							"value": "www.worldwideweb.com",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/companies/update/94?image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"companies",
+						"update",
+						"94"
+					],
+					"query": [
+						{
+							"key": "image",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete company",
+			"_postman_id": "68f78537-71e1-4261-af82-ece0e30e0768",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8000/api/companies/delete/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get employee sortBy=id/name & paginate=10",
+			"_postman_id": "5362ec11-7ac4-47b9-b4e0-5d3bc8241010",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/employees?page1&sortBy=id&sortOrder=asc&paginate=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "page1",
+							"value": null
+						},
+						{
+							"key": "sortBy",
+							"value": "id"
+						},
+						{
+							"key": "sortOrder",
+							"value": "asc"
+						},
+						{
+							"key": "paginate",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add employee",
+			"_postman_id": "e33f70dd-9d0d-49a6-aaea-dc7f257103f1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "employee_first_name",
+							"value": "Master12",
+							"type": "text"
+						},
+						{
+							"key": "employee_last_name",
+							"value": "Papi Yow12",
+							"type": "text"
+						},
+						{
+							"key": "company_id",
+							"value": "2\n",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "Master@email.com2",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "09876565432",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": "http://localhost:8000/api/employees/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Update employee",
+			"_postman_id": "c9c4b3d4-aeae-4c86-884c-e3b5e6723c55",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/employees/update/40?employee_first_name=Jonathan8&employee_last_name=Abad8&company_id=&email=jonathan@abad.com8&phone=09204962172",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees",
+						"update",
+						"40"
+					],
+					"query": [
+						{
+							"key": "employee_first_name",
+							"value": "Jonathan8"
+						},
+						{
+							"key": "employee_last_name",
+							"value": "Abad8"
+						},
+						{
+							"key": "company_id",
+							"value": ""
+						},
+						{
+							"key": "email",
+							"value": "jonathan@abad.com8"
+						},
+						{
+							"key": "phone",
+							"value": "09204962172"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employee",
+			"_postman_id": "65a9d429-a2af-4872-b3f3-31e493ebb98b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8000/api/employees/delete/39"
+			},
+			"response": []
+		}
+	]
+}
