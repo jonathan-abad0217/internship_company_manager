@@ -100,7 +100,7 @@
 					"formdata": [
 						{
 							"key": "name",
-							"value": "WorldWideWeb",
+							"value": "WorldWideWeb1",
 							"type": "text"
 						},
 						{
@@ -111,7 +111,7 @@
 						{
 							"key": "image",
 							"type": "file",
-							"src": "/D:/OneDrive/Pictures/0ca59a02143d837b5842e4d3477ba0c973a6ee14.jpg"
+							"value": null
 						},
 						{
 							"key": "website",
@@ -120,26 +120,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "http://localhost:8000/api/companies/update/94?image",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"companies",
-						"update",
-						"94"
-					],
-					"query": [
-						{
-							"key": "image",
-							"value": null
-						}
-					]
-				}
+				"url": "http://localhost:8000/api/companies/update/100"
 			},
 			"response": []
 		},
