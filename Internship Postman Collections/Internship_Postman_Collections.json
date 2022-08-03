@@ -16,7 +16,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/companies?page=2&sortBy=id&sortOrder=asc&paginate=10",
+					"raw": "http://localhost:8000/api/companies?page=1&sortBy=name&sortOrder=asc&paginate=10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,11 +29,11 @@
 					"query": [
 						{
 							"key": "page",
-							"value": "2"
+							"value": "1"
 						},
 						{
 							"key": "sortBy",
-							"value": "id"
+							"value": "name"
 						},
 						{
 							"key": "sortOrder",
