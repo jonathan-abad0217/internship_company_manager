@@ -15,7 +15,7 @@ class APIEmController extends Controller
     public function index(Request $request)
     {
         $employee_query = new Employees();
-        if($request ->sortBy && in_array($request->sortBy,['id', 'created_at'])){
+        if($request ->sortBy && in_array($request->sortBy,['id', 'phone'])){
             $sortBy=$request->sortBy;
 
         }else{

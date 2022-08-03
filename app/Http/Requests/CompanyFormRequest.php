@@ -26,6 +26,7 @@ class CompanyFormRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048|dimensions:min_width=100,min_height=100',
             'website' => 'required',
         ];
     }

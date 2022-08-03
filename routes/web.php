@@ -20,9 +20,13 @@ Route::resource('companies',CompanyController::class);
 
 
 
-Auth::routes();
 
-//Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+  ]);
+
 
     Route::get('/companies', [CompanyController::class, 'index'])->name('admin.companies.index');
     Route::post('/companies/create', [CompanyController::class, 'create'])->name('admin.companies.create') ;

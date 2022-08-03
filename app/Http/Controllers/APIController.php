@@ -13,7 +13,7 @@ class APIController extends Controller
     public function index(Request $request)
     {
         $company_query = new Companies();
-        if($request ->sortBy && in_array($request->sortBy,['id', 'created_at'])){
+        if($request ->sortBy && in_array($request->sortBy,['id', 'website'])){
             $sortBy=$request->sortBy;
 
         }else{
@@ -59,8 +59,8 @@ class APIController extends Controller
             $path = $request->file('image')->storeAs($destination_path, $image_name);
 
             $data['image'] =$image_name;
-          
-        
+        }else{
+            $data['image'] ="null";
         }
         $companies = Companies::create($data);
 

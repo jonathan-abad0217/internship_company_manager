@@ -15,6 +15,7 @@ class Companies extends Model
     
     protected $fillable = ['name','email','image','website'];
 
+    protected $hidden = ['created_at', 'updated_at'];
 
     //companies has many employees
     public function employees(){

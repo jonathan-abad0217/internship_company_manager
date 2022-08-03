@@ -46,7 +46,7 @@
                 <div class="nav-item dropdown">
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block" >
                     <a id="navbarDropdown" class="nav-link dropdown-toggle text-gray-700 dark:text-gray-500" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        Logout
+                        {{ Auth::user()->name }}
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
