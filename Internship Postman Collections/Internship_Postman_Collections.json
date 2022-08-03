@@ -7,7 +7,7 @@
 	"item": [
 		{
 			"name": "Get company sortBy=id/name & paginate=10",
-			"_postman_id": "73234811-9aa1-445b-836c-52f0582ad4c5",
+			"id": "73234811-9aa1-445b-836c-52f0582ad4c5",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true,
 				"disabledSystemHeaders": {}
@@ -16,7 +16,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/companies?page=1&sortBy=name&sortOrder=asc&paginate=10",
+					"raw": "http://localhost:8000/api/companies?page=2&sortBy=id&sortOrder=asc&paginate=10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,11 +29,11 @@
 					"query": [
 						{
 							"key": "page",
-							"value": "1"
+							"value": "2"
 						},
 						{
 							"key": "sortBy",
-							"value": "name"
+							"value": "id"
 						},
 						{
 							"key": "sortOrder",
@@ -50,7 +50,7 @@
 		},
 		{
 			"name": "Add company",
-			"_postman_id": "5545bd30-5aad-41a2-be33-3bd1f2b9303b",
+			"id": "5545bd30-5aad-41a2-be33-3bd1f2b9303b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -80,10 +80,7 @@
 							"value": "asd",
 							"type": "text"
 						}
-					],
-					"options": {
-						"formdata": {}
-					}
+					]
 				},
 				"url": "http://localhost:8000/api/companies/create"
 			},
@@ -91,7 +88,7 @@
 		},
 		{
 			"name": "Update company",
-			"_postman_id": "ff97512f-21eb-4769-9ecc-d47665351306",
+			"id": "ff97512f-21eb-4769-9ecc-d47665351306",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -121,10 +118,7 @@
 							"value": "www.worldwideweb.com",
 							"type": "text"
 						}
-					],
-					"options": {
-						"formdata": {}
-					}
+					]
 				},
 				"url": {
 					"raw": "http://localhost:8000/api/companies/update/94?image",
@@ -151,7 +145,7 @@
 		},
 		{
 			"name": "Delete company",
-			"_postman_id": "68f78537-71e1-4261-af82-ece0e30e0768",
+			"id": "68f78537-71e1-4261-af82-ece0e30e0768",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -164,7 +158,7 @@
 		},
 		{
 			"name": "Get employee sortBy=id/name & paginate=10",
-			"_postman_id": "5362ec11-7ac4-47b9-b4e0-5d3bc8241010",
+			"id": "5362ec11-7ac4-47b9-b4e0-5d3bc8241010",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -206,7 +200,7 @@
 		},
 		{
 			"name": "add employee",
-			"_postman_id": "e33f70dd-9d0d-49a6-aaea-dc7f257103f1",
+			"id": "e33f70dd-9d0d-49a6-aaea-dc7f257103f1",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -241,10 +235,7 @@
 							"value": "09876565432",
 							"type": "text"
 						}
-					],
-					"options": {
-						"formdata": {}
-					}
+					]
 				},
 				"url": "http://localhost:8000/api/employees/create"
 			},
@@ -252,7 +243,7 @@
 		},
 		{
 			"name": "Update employee",
-			"_postman_id": "c9c4b3d4-aeae-4c86-884c-e3b5e6723c55",
+			"id": "c9c4b3d4-aeae-4c86-884c-e3b5e6723c55",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -300,7 +291,7 @@
 		},
 		{
 			"name": "Delete employee",
-			"_postman_id": "65a9d429-a2af-4872-b3f3-31e493ebb98b",
+			"id": "65a9d429-a2af-4872-b3f3-31e493ebb98b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
