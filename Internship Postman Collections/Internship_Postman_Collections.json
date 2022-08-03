@@ -133,7 +133,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "http://localhost:8000/api/companies/delete/"
+				"url": "http://localhost:8000/api/companies/delete/{id}"
 			},
 			"response": []
 		},
