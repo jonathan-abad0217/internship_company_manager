@@ -100,12 +100,12 @@
 					"formdata": [
 						{
 							"key": "name",
-							"value": "WorldWideWeb1",
+							"value": "",
 							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "WorldWideWeb@email.com",
+							"value": "",
 							"type": "text"
 						},
 						{
@@ -115,12 +115,12 @@
 						},
 						{
 							"key": "website",
-							"value": "www.worldwideweb.com",
+							"value": "",
 							"type": "text"
 						}
 					]
 				},
-				"url": "http://localhost:8000/api/companies/update/100"
+				"url": "http://localhost:8000/api/companies/update/{id}"
 			},
 			"response": []
 		},
