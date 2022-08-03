@@ -229,44 +229,39 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/employees/update/40?employee_first_name=Jonathan8&employee_last_name=Abad8&company_id=&email=jonathan@abad.com8&phone=09204962172",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"employees",
-						"update",
-						"40"
-					],
-					"query": [
+				"body": {
+					"mode": "formdata",
+					"formdata": [
 						{
 							"key": "employee_first_name",
-							"value": "Jonathan8"
+							"value": "Jonathan",
+							"type": "text"
 						},
 						{
 							"key": "employee_last_name",
-							"value": "Abad8"
+							"value": "Abad",
+							"type": "text"
 						},
 						{
 							"key": "company_id",
-							"value": ""
+							"value": "3",
+							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "jonathan@abad.com8"
+							"value": "jonathan@email.com",
+							"type": "text"
 						},
 						{
 							"key": "phone",
-							"value": "09204962172"
+							"value": "09204962172",
+							"type": "text"
 						}
 					]
-				}
+				},
+				"url": "http://localhost:8000/api/employees/update/{id}"
 			},
 			"response": []
 		},
