@@ -274,7 +274,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "http://localhost:8000/api/employees/delete/39"
+				"url": "http://localhost:8000/api/employees/delete/{id}"
 			},
 			"response": []
 		}
