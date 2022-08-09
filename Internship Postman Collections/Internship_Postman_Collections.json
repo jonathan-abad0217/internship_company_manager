@@ -145,149 +145,150 @@
 		},
 		{
 			"name": "Employee Requests",
-			"item": [],
-			"id": "1d0049f0-be7e-4861-9a0b-a48029e5b339"
-		},
-		{
-			"name": "Get employee sortBy=id/name & paginate=10",
-			"id": "5362ec11-7ac4-47b9-b4e0-5d3bc8241010",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/employees?page1&sortBy=id&sortOrder=asc&paginate=10",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"employees"
-					],
-					"query": [
-						{
-							"key": "page1",
-							"value": null
-						},
-						{
-							"key": "sortBy",
-							"value": "id"
-						},
-						{
-							"key": "sortOrder",
-							"value": "asc"
-						},
-						{
-							"key": "paginate",
-							"value": "10"
+			"item": [
+				{
+					"name": "Get employee sortBy=id/name & paginate=10",
+					"id": "5362ec11-7ac4-47b9-b4e0-5d3bc8241010",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/employees?page=1&sortBy=name&sortOrder=asc&paginate=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sortBy",
+									"value": "name"
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc"
+								},
+								{
+									"key": "paginate",
+									"value": "10"
+								}
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "add employee",
+					"id": "e33f70dd-9d0d-49a6-aaea-dc7f257103f1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employee_first_name",
+									"value": "Master12",
+									"type": "text"
+								},
+								{
+									"key": "employee_last_name",
+									"value": "Papi Yow12",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "2\n",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "Master@email.com2",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "09876565432",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/employees/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Update employee",
+					"id": "c9c4b3d4-aeae-4c86-884c-e3b5e6723c55",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employee_first_name",
+									"value": "Jonathan",
+									"type": "text"
+								},
+								{
+									"key": "employee_last_name",
+									"value": "Abad",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jonathan@email.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "09204962172",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/employees/update/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete employee",
+					"id": "65a9d429-a2af-4872-b3f3-31e493ebb98b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/api/employees/delete/{id}"
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "add employee",
-			"id": "e33f70dd-9d0d-49a6-aaea-dc7f257103f1",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "employee_first_name",
-							"value": "Master12",
-							"type": "text"
-						},
-						{
-							"key": "employee_last_name",
-							"value": "Papi Yow12",
-							"type": "text"
-						},
-						{
-							"key": "company_id",
-							"value": "2\n",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "Master@email.com2",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "09876565432",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://localhost:8000/api/employees/create"
-			},
-			"response": []
-		},
-		{
-			"name": "Update employee",
-			"id": "c9c4b3d4-aeae-4c86-884c-e3b5e6723c55",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "employee_first_name",
-							"value": "Jonathan",
-							"type": "text"
-						},
-						{
-							"key": "employee_last_name",
-							"value": "Abad",
-							"type": "text"
-						},
-						{
-							"key": "company_id",
-							"value": "3",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "jonathan@email.com",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "09204962172",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://localhost:8000/api/employees/update/{id}"
-			},
-			"response": []
-		},
-		{
-			"name": "Delete employee",
-			"id": "65a9d429-a2af-4872-b3f3-31e493ebb98b",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": "http://localhost:8000/api/employees/delete/{id}"
-			},
-			"response": []
+			],
+			"id": "1d0049f0-be7e-4861-9a0b-a48029e5b339"
 		}
 	]
 }
