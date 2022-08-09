@@ -13,7 +13,7 @@
         <div class="col-10 col-md-8 col-lg-6">
             <h2> Edit Company</h2>
                                                                  
-            <form class="form bg-white p-6 border-1" method="POST" action="{{ route('companies.update', ['company' => $company->id]) }}" enctype="multipart/form-data">
+            <form class="form bg-white p-6 border-1" method="POST" action="{{ route('companies.update', $company->id) }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                  @method ('PUT')
     

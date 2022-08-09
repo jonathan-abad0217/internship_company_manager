@@ -50,7 +50,7 @@ class CompanyController extends Controller
             $data['image'] = 'null';                //if there are no picture, null the image
         }
         $companies = Companies::create($data);          //create in database all the requests after validation
-       return redirect()->route('admin.companies.index');
+       return redirect()->route('companies.index');
     }
     
         //shows the company details and their employees
@@ -94,14 +94,14 @@ class CompanyController extends Controller
 
             $company->update($data);
             
-            return redirect()->route('admin.companies.index');
+            return redirect()->route('companies.index');
         }
    //delete company
     public function delete($id)
     {
             $data=Companies::find($id);
             $data->delete();
-            return redirect()->route('admin.companies.index');
+            return redirect()->route('companies.index');
         }
     
 }

@@ -36,7 +36,7 @@ class EmployeeController extends Controller
         
         $companies->employees()->create($data);         //create data in database 
 
-            return redirect()->route('admin.employees.index');
+            return redirect()->route('employees.index');
        
 
     }
@@ -59,7 +59,7 @@ class EmployeeController extends Controller
         $employee->update($data);
       
         
-            return redirect()->route('admin.employees.index');
+            return redirect()->route('employees.index');
        
         
       
@@ -70,6 +70,6 @@ class EmployeeController extends Controller
     {
         $data=Employees::find($id);
         $data->delete();
-        return redirect()->route('admin.employees.index');
+        return redirect()->route('employees.index');
     }
 }

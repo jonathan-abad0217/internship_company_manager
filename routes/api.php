@@ -36,7 +36,7 @@ Route::get('/employees', [APIEmController::class, 'index']);
 
 Route::post('/employees/create', [APIEmController::class, 'store']);
 
-Route::put('/employees/update/{id}', [APIEmController::class, 'update']);
+Route::post('/employees/update/{id}', [APIEmController::class, 'update']);
 Route::delete('/employees/delete/{id}', [APIEmController::class, 'delete']);
 
 
