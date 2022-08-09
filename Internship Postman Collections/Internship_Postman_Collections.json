@@ -6,6 +6,11 @@
 	},
 	"item": [
 		{
+			"name": "New Folder",
+			"item": [],
+			"id": "3e423f4f-c258-47e0-97d7-9061599c68f7"
+		},
+		{
 			"name": "Get company sortBy=id/name & paginate=10",
 			"id": "73234811-9aa1-445b-836c-52f0582ad4c5",
 			"protocolProfileBehavior": {
