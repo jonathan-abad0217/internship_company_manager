@@ -7,140 +7,146 @@
 	"item": [
 		{
 			"name": "Company Requests",
-			"item": [],
+			"item": [
+				{
+					"name": "Get company sortBy=id/name & paginate=10",
+					"id": "73234811-9aa1-445b-836c-52f0582ad4c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/companies?page=1&sortBy=name&sortOrder=asc&paginate=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sortBy",
+									"value": "name"
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc"
+								},
+								{
+									"key": "paginate",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add company",
+					"id": "5545bd30-5aad-41a2-be33-3bd1f2b9303b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "asd",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "asd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/OneDrive/Pictures/0562d171481981.5bcd77262adca.jpg"
+								},
+								{
+									"key": "website",
+									"value": "asd",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/companies/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Update company",
+					"id": "ff97512f-21eb-4769-9ecc-d47665351306",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"value": null
+								},
+								{
+									"key": "website",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/companies/update/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete company",
+					"id": "68f78537-71e1-4261-af82-ece0e30e0768",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/api/companies/delete/{id}"
+					},
+					"response": []
+				}
+			],
 			"id": "3e423f4f-c258-47e0-97d7-9061599c68f7"
 		},
 		{
-			"name": "Get company sortBy=id/name & paginate=10",
-			"id": "73234811-9aa1-445b-836c-52f0582ad4c5",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true,
-				"disabledSystemHeaders": {}
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/companies?page=1&sortBy=name&sortOrder=asc&paginate=10",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"companies"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "sortBy",
-							"value": "name"
-						},
-						{
-							"key": "sortOrder",
-							"value": "asc"
-						},
-						{
-							"key": "paginate",
-							"value": "10"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add company",
-			"id": "5545bd30-5aad-41a2-be33-3bd1f2b9303b",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "asd",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "asd",
-							"type": "text"
-						},
-						{
-							"key": "image",
-							"type": "file",
-							"src": "/D:/OneDrive/Pictures/0562d171481981.5bcd77262adca.jpg"
-						},
-						{
-							"key": "website",
-							"value": "asd",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://localhost:8000/api/companies/create"
-			},
-			"response": []
-		},
-		{
-			"name": "Update company",
-			"id": "ff97512f-21eb-4769-9ecc-d47665351306",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "image",
-							"type": "file",
-							"value": null
-						},
-						{
-							"key": "website",
-							"value": "",
-							"type": "text"
-						}
-					]
-				},
-				"url": "http://localhost:8000/api/companies/update/{id}"
-			},
-			"response": []
-		},
-		{
-			"name": "Delete company",
-			"id": "68f78537-71e1-4261-af82-ece0e30e0768",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": "http://localhost:8000/api/companies/delete/{id}"
-			},
-			"response": []
+			"name": "New Folder",
+			"item": [],
+			"id": "1d0049f0-be7e-4861-9a0b-a48029e5b339"
 		},
 		{
 			"name": "Get employee sortBy=id/name & paginate=10",
