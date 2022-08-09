@@ -103,12 +103,12 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "",
+									"value": "World Wide updated",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "",
+									"value": "wordwideupdated@email.com",
 									"type": "text"
 								},
 								{
@@ -118,12 +118,12 @@
 								},
 								{
 									"key": "website",
-									"value": "",
+									"value": "www.wordwideupdated.com",
 									"type": "text"
 								}
 							]
 						},
-						"url": "http://localhost:8000/api/companies/update/{id}"
+						"url": "http://localhost:8000/api/companies/update/15"
 					},
 					"response": []
 				},
