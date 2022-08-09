@@ -8,8 +8,8 @@
         </section>
         @section('content')
 
-        <div class="container h-100">
-            <div class="row h-100 justify-content-center align-items-center">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
                 <div class="col-10 col-md-8 col-lg-6">
                     <h2> Add Employee</h2>
 
@@ -66,8 +66,8 @@
         </span>
             @enderror
         </div>
-        <br>
-                <br>
+       
+                
                 <button class=" btn btn-outline-secondary" type="submit">Submit</button>
             </div>
         </form>

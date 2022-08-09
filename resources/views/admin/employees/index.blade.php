@@ -30,26 +30,28 @@
         @foreach ($employees as $employee)
         
         <tr>
-            <td>
+            <td style="vertical-align: middle;">
                 <span>{{$employee['employee_first_name']}} {{$employee['employee_last_name']}}</span>
             </td>
-            <td>
+            <td style="vertical-align: middle;">
                 <span>{{$employee->companies->name}}</span>
             </td>
-            <td>
+            <td style="vertical-align: middle;">
                 <span>{{$employee['email']}}</span>
             </td>
-            <td>
+            <td style="vertical-align: middle;">
                 <span>{{$employee['phone']}}</span>
             </td>
             <td style="width: 20%;">
-                        
-                        <a href="employees/{{$employee->id}}/edit" class="btn btn-secondary">Edit</a>
-                        <a href="/employees/delete/{{$employee->id}}" class="btn btn-danger">Delete</a>
-                  
+            
+                       <span> <a href="employees/{{$employee->id}}/edit" class="btn btn-secondary">Edit</a>
+                        <a href="/employees/delete/{{$employee->id}}" class="btn btn-danger">Delete</a></span>
+                    </td>
+                </tr>
             </div>
         @endforeach
-       
+    </tbody>
+</table>
     @else
         <h2>There are no employee to display</h2>
     @endif
@@ -57,8 +59,7 @@
     <div>
         
     </div>
-    <br>
-    <br>
+    
     {{ $employees->links() }}
 </div>
 @endsection

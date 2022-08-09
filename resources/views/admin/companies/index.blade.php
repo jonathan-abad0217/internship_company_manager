@@ -23,39 +23,40 @@
                         </thead>
                         <tbody>
     
-        
     @if (count($companies) > 0)
 
         @foreach ($companies as $company)
         <tr>
-            <td>
-                <img src="{{ asset('storage/images/companies//'.$company->image) }}" height="70" width="70" alt="image" title="image">
-                <a href="{{ route('companies.show', [$company['id']])}}">{{$company['name']}}</a>
+            <td style=" vertical-align: middle;">
+                <span> <img src="{{ asset('storage/images/companies//'.$company->image) }}" height="70" width="70" alt="image" title="image">
+                <a href="{{ route('companies.show', [$company['id']])}}">{{$company['name']}}</a></span>
             </td>
             
-            <td>
-                <span> {{$company['email']}}</span>
+            <td style="vertical-align: middle;">
+                <span>{{$company['email']}}</span>
             </td>
-            <td>
-                {{$company['website']}}
+            <td style="vertical-align: middle;">
+                <span>{{$company['website']}}</span>
             </td>
-            <td style="width: 20%;">
+            <td style="vertical-align: middle;">
             
                         <a href="companies/{{$company->id}}/edit"class="btn btn-secondary">Edit</a>
                         <a href="/companies/delete/{{$company->id}}"class="btn btn-danger">Delete</a>
-            </div>
-        </div>
+            </td>
+        </tr>
+                        
+                        
         @endforeach
-        
+    </tbody>
+    </table>
     @else
         <h2>There are no company to display</h2>
     @endif
-
-    <div>
-    
     </div>
-    <br>
-    <br>
-  {{ $companies->links() }}
+    </div>
+    </div>
+    </div>
+    
+    {{ $companies->links() }}
 </div>
 @endsection

@@ -42,14 +42,14 @@
             @foreach($companies->employees as $employee)
           
             <tr>
-                <td>
+                <td style="vertical-align: middle;">
                     <span>{{$employee['employee_first_name']}} {{$employee['employee_last_name']}}</span>
                 </td>
               
-                <td>
+                <td style="vertical-align: middle;">
                     <span>{{$employee['email']}}</span>
                 </td>
-                <td>
+                <td style="vertical-align: middle;">
                     <span>{{$employee['phone']}}</span>
                 </td>
                 <td style="width: 20%;">
